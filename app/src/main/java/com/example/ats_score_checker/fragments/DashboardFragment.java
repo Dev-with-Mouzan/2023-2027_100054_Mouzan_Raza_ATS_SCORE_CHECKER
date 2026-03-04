@@ -36,11 +36,6 @@ public class DashboardFragment extends Fragment {
 
         viewModel.getAnalysisResult().observe(getViewLifecycleOwner(), this::displayResults);
 
-        binding.headerLogo.setOnClickListener(v -> {
-            android.content.Intent browserIntent = new android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse("https://www.ggcb.edu.pk/"));
-            startActivity(browserIntent);
-        });
-
         binding.buttonStartOver.setOnClickListener(v -> {
             viewModel.reset();
             Navigation.findNavController(v).navigate(R.id.action_dashboard_to_input);
@@ -52,11 +47,6 @@ public class DashboardFragment extends Fragment {
 
         binding.cardSkills.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_dashboardFragment_to_missingSkillsFragment);
-        });
-        
-        binding.buttonShare.setOnClickListener(v -> {
-            // Placeholder for share functionality
-            android.widget.Toast.makeText(getContext(), "Sharing analysis...", android.widget.Toast.LENGTH_SHORT).show();
         });
     }
 

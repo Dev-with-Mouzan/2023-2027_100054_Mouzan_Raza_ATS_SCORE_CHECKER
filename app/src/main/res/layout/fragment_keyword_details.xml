@@ -14,11 +14,11 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent">
-        
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/header_logo"
                 android:layout_width="32dp"
@@ -32,275 +32,49 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/button_back"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="8dp"
-                android:src="@android:drawable/ic_menu_revert"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/header_logo"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/white" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Keywords optimization"
+                android:text="Keyword Details"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-                
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_back"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <LinearLayout
+            android:id="@+id/keyword_details_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Summary Card -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/neon_glow_card"
-                android:padding="20dp">
-
-                <TextView
-                    android:id="@+id/text_match_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="80%"
-                    android:textColor="@color/metricValue"
-                    android:textSize="32sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Keyword matching"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="@id/text_match_score"
-                    app:layout_constraintStart_toEndOf="@id/text_match_score"
-                    app:layout_constraintTop_toTopOf="@id/text_match_score" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="We found 12 keywords that match your profile. We suggest adding 3 more to reach 95%."
-                    android:textColor="@color/metricLabel"
-                    android:textSize="12sp"
-                    app:layout_constraintTop_toBottomOf="@id/text_match_score" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="MATCHING KEYWORDS"
-                android:textAllCaps="true"
-                android:textColor="#404040"
-                android:textSize="12sp"
-                android:letterSpacing="0.1"/>
-
-            <!-- Keywords Flow -->
-            <!-- Note: In a real app, this would be a RecyclerView with a FlowLayoutManager -->
-            <com.google.android.material.chip.ChipGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:chipSpacingHorizontal="8dp"
-                app:chipSpacingVertical="8dp">
-
-                <com.google.android.material.chip.Chip
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Product design"
-                    app:chipBackgroundColor="#3300F2FF"
-                    android:textColor="#00F2FF"
-                    app:chipCornerRadius="8dp"
-                    app:chipStrokeWidth="0dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textSize="12sp"
-                    app:chipIcon="@android:drawable/checkbox_on_background"
-                    app:chipIconTint="#00F2FF"
-                    app:iconStartPadding="8dp"/>
-
-                <com.google.android.material.chip.Chip
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="UX Research"
-                    app:chipBackgroundColor="#3300F2FF"
-                    android:textColor="#00F2FF"
-                    app:chipCornerRadius="8dp"
-                    app:chipStrokeWidth="0dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textSize="12sp"
-                    app:chipIcon="@android:drawable/checkbox_on_background"
-                    app:chipIconTint="#00F2FF"
-                    app:iconStartPadding="8dp"/>
-
-                <com.google.android.material.chip.Chip
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="A/B Testing"
-                    app:chipBackgroundColor="#3300F2FF"
-                    android:textColor="#00F2FF"
-                    app:chipCornerRadius="8dp"
-                    app:chipStrokeWidth="0dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textSize="12sp"
-                    app:chipIcon="@android:drawable/checkbox_on_background"
-                    app:chipIconTint="#00F2FF"
-                    app:iconStartPadding="8dp"/>
-
-                <com.google.android.material.chip.Chip
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Prototyping"
-                    app:chipBackgroundColor="#3300F2FF"
-                    android:textColor="#00F2FF"
-                    app:chipCornerRadius="8dp"
-                    app:chipStrokeWidth="0dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textSize="12sp"
-                    app:chipIcon="@android:drawable/checkbox_on_background"
-                    app:chipIconTint="#00F2FF"
-                    app:iconStartPadding="8dp"/>
-
-            </com.google.android.material.chip.ChipGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="MISSING KEYWORDS"
-                android:textAllCaps="true"
-                android:textColor="#404040"
-                android:textSize="12sp"
-                android:letterSpacing="0.1"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="vertical">
-
-                <!-- Missing Keyword Item -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/card_dark_input"
-                    android:padding="16dp"
-                    android:layout_marginBottom="12dp">
-
-                    <TextView
-                        android:id="@+id/text_keyword_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_bold"
-                        android:text="Accessibility (A11y)"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="Mentioned 3 times in job description"
-                        android:textColor="@color/statusWarning"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/text_keyword_name" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/button_status_warning"
-                        android:fontFamily="@font/poppins_bold"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="6dp"
-                        android:text="ADD"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/card_dark_input"
-                    android:padding="16dp"
-                    android:layout_marginBottom="12dp">
-
-                    <TextView
-                        android:id="@+id/text_keyword_name2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_bold"
-                        android:text="Agile Methodology"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="Found in JD, missing from experience section"
-                        android:textColor="@color/statusWarning"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/text_keyword_name2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/button_status_warning"
-                        android:fontFamily="@font/poppins_bold"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="6dp"
-                        android:text="ADD"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
+            <!-- Content for keyword details -->
 
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_back"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="#20FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:text="GO BACK"
+        android:textColor="@color/white"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

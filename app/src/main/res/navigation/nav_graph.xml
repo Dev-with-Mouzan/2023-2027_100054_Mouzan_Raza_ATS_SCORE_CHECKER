@@ -51,4 +51,28 @@
         android:label="Mock Interview"
         tools:layout="@layout/fragment_mock_interview" />
 
+    <fragment
+        android:id="@+id/keywordDetailsFragment"
+        android:name="com.example.ats_score_checker.fragments.KeywordDetailsFragment"
+        android:label="Keyword Details"
+        tools:layout="@layout/fragment_keyword_details" />
+
+    <fragment
+        android:id="@+id/resumeEditorFragment"
+        android:name="com.example.ats_score_checker.fragments.ResumeEditorFragment"
+        android:label="Resume Editor"
+        tools:layout="@layout/fragment_resume_editor" />
+
+    <fragment
+        android:id="@+id/rewriteSuggestionsFragment"
+        android:name="com.example.ats_score_checker.fragments.RewriteSuggestionsFragment"
+        android:label="Rewrite Suggestions"
+        tools:layout="@layout/fragment_rewrite_suggestions" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.ats_score_checker.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>

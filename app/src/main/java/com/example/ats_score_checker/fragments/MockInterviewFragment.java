@@ -50,8 +50,6 @@ public class MockInterviewFragment extends Fragment {
             });
         }
 
-        binding.buttonBack.setOnClickListener(v -> Navigation.findNavController(v).popBackStack());
-
         binding.buttonSend.setOnClickListener(v -> {
             String message = binding.editMessage.getText().toString().trim();
             if (!message.isEmpty()) {

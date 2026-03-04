@@ -70,8 +70,6 @@ public class InputFragment extends Fragment {
         }
         viewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
-        binding.buttonBack.setOnClickListener(v -> Navigation.findNavController(v).popBackStack());
-
         binding.cardUpload.setOnClickListener(v -> openFilePicker());
         
         binding.buttonAnalyze.setOnClickListener(v -> analyzeResume());
@@ -106,7 +104,6 @@ public class InputFragment extends Fragment {
         }
 
         RequestBody requestFile = RequestBody.create(MediaType.parse("application/pdf"), file);
-        // Fixed: The backend expects "resume_file", not "resume"
         MultipartBody.Part body = MultipartBody.Part.createFormData("resume_file", file.getName(), requestFile);
         RequestBody description = RequestBody.create(MediaType.parse("text/plain"), jobDescription);
 
@@ -122,7 +119,6 @@ public class InputFragment extends Fragment {
                     viewModel.setAnalysisResult(response.body());
                     Navigation.findNavController(requireView()).navigate(R.id.action_inputFragment_to_dashboardFragment);
                 } else {
-                    // Log error body if possible for better debugging
                     try {
                         if (response.errorBody() != null) {
                             android.util.Log.e("API_ERROR", response.errorBody().string());

@@ -6,6 +6,6 @@
         android:title="ANALYSIS" />
     <item
         android:id="@+id/mockInterviewFragment"
-        android:icon="@drawable/ic_bot"
+        android:icon="@android:drawable/ic_menu_search"
         android:title="INTERVIEW" />
 </menu>

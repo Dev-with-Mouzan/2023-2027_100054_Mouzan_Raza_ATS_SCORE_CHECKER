@@ -40,8 +40,6 @@ public class MissingSkillsFragment extends Fragment {
         }
         viewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
-        binding.buttonBack.setOnClickListener(v -> Navigation.findNavController(v).popBackStack());
-
         viewModel.getAnalysisResult().observe(getViewLifecycleOwner(), response -> {
             if (response != null && response.getMissingKeywords() != null) {
                 displaySkills(response.getMissingKeywords());
